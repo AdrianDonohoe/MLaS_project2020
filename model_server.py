@@ -11,13 +11,13 @@ print(model.predict([1.5]).tolist())
 
 
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='', static_folder='static')
 
 @app.route('/')
 @app.route('/home')
 @app.route('/index')
 def index():
-    return"Hello, World!"
+    return app.send_static_file('index.html')
 
 @app.route('/predict/<int:x>', methods=['GET'])
 @app.route('/predict/<float:x>', methods=['GET'])
