@@ -17,12 +17,33 @@
         border: 3px solid skyblue;
         padding: 10px;
     }
+    #imageDiv {
+        margin: auto;
+        padding: 10px;
+    }
+    
 
     #heading {
         margin: auto;
         width: 80%;
         padding: 10px;
     }
+
+    p {
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border: 3px solid skyblue;
+    } /* verbatim from https://www.w3schools.com/howto/howto_css_image_center.asp*/
 </style>
 <body>
 
@@ -31,6 +52,7 @@
     <h3 id="heading">Model for predicting wind turbine power output from wind speed</h3>   
     <hr>
     <br><br>
+    <p>Enter the wind speed in the box below and your predicted power will be displayed.</p>
     <div id="mydiv">    
         <h3>Enter Wind Speed:</h3>        
         <input type="text" id="windInput" placeholder="Wind Speed" value="">
@@ -39,6 +61,10 @@
     
         <br>
         Prediction: <div id="prediction" style="display: none;"></div>
+    </div>
+    <div id="imageDiv">
+        <p>This plot shows actual data and the model prediction for each point as a line plot. The model used in this case is a tensorflow neural network.</p>
+        <img class="center" src="images/neural_network.png" alt="plot of models">
     </div>
 
 </body>

@@ -19,6 +19,10 @@ app = Flask(__name__,static_url_path='', static_folder='static')
 def index():
     return app.send_static_file('index.html')
 
+@app.route('/images/<string:x>')
+def image(x):
+    return app.send_static_file(x)
+
 @app.route('/predict/<int:x>', methods=['GET'])
 @app.route('/predict/<float:x>', methods=['GET'])
 def predictor(x):
