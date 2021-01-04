@@ -6,8 +6,8 @@ import json
 
 model = load_model('wind_power.h5')
 #print(model.summary())
-print(model.predict([1.5]))
-print(model.predict([1.5]).tolist())
+#print(model.predict([1.5]))
+#print(model.predict([1.5]).tolist())
 
 
 
