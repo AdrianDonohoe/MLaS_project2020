@@ -12,7 +12,7 @@ The repository contains the following files :
 
 2. A jupyter notebook, for investigation and model analysis.
 
-3. model_server.py , a flask application.
+3. model_server.py , a python flask application.
 
 4. powerproduction.txt, a text file containing the dataset
 
@@ -21,11 +21,11 @@ The repository contains the following files :
 6. requirements.txt, used to build the python environment
 
     ```bash
-    pip install -r < requiremnets.txt
+    pip install -r requirements.txt
     ```
 7. wind_power_weigths,wind_power.h5 . Model save files. These are loaded by the flask application.
 
-8. static files served by the flask application.
+8. static files served by the flask application, including the html frontend, which uses JavaScript/AJAX to request prediction from server.
 
 
 ## Linux
