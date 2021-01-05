@@ -4,25 +4,26 @@ import tensorflow.keras as kr
 from tensorflow.keras.models import load_model
 import json
 
+#load the model
 model = load_model('wind_power.h5')
-#print(model.summary())
-#print(model.predict([1.5]))
-#print(model.predict([1.5]).tolist())
 
-
-
+# define the flask app with static folder
 app = Flask(__name__,static_url_path='', static_folder='static')
 
+# add routes for /, /home and /index, with function that sends the index.html
 @app.route('/')
 @app.route('/home')
 @app.route('/index')
 def index():
     return app.send_static_file('index.html')
 
+#route used to fetch the static image
 @app.route('/images/<string:x>')
 def image(x):
     return app.send_static_file(x)
 
+# routes which serves the prediction requests
+#function returns the model prediction
 @app.route('/predict/<int:x>', methods=['GET'])
 @app.route('/predict/<float:x>', methods=['GET'])
 def predictor(x):
